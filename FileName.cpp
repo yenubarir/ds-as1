@@ -1,20 +1,39 @@
-#include <iostream> 
-#include <stack>
-using namespace std;
-int main() {
-	stack<int> stack;
-	stack.push(21);// The values pushed in the stack should be of the same data which is written during declaration of stack
-	stack.push(22);
-	stack.push(24);
-	stack.push(25);
-	int num = 0;
-	stack.push(num);
-	stack.pop();
-	stack.pop();
-	stack.pop();
+// CPP code to illustrate Queue in 
+// Standard Template Library (STL)
+#include <iostream>
+#include <queue>
 
-	while (!stack.empty()) {
-		cout << stack.top() << " ";
-		stack.pop();
+using namespace std;
+
+// Print the queue
+void showq(queue<int> gq)
+{
+	queue<int> g = gq;
+	while (!g.empty()) {
+		cout << '\t' << g.front();
+		g.pop();
 	}
+	cout << '\n';
+}
+
+// Driver Code
+int main()
+{
+	queue<int> gquiz;
+	gquiz.push(10);
+	gquiz.push(20);
+	gquiz.push(30);
+
+	cout << "The queue gquiz is : ";
+	showq(gquiz);
+
+	cout << "\ngquiz.size() : " << gquiz.size();
+	cout << "\ngquiz.front() : " << gquiz.front();
+	cout << "\ngquiz.back() : " << gquiz.back();
+
+	cout << "\ngquiz.pop() : ";
+	gquiz.pop();
+	showq(gquiz);
+
+	return 0;
 }
