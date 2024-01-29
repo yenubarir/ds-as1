@@ -1,39 +1,22 @@
-// CPP code to illustrate Queue in 
-// Standard Template Library (STL)
 #include <iostream>
-#include <queue>
-
 using namespace std;
+int main() {
 
-// Print the queue
-void showq(queue<int> gq)
-{
-	queue<int> g = gq;
-	while (!g.empty()) {
-		cout << '\t' << g.front();
-		g.pop();
-	}
-	cout << '\n';
-}
+    int a[] = { 8,7,6,5,2,4,1,3,9 };
+    int getArrayLength = sizeof(a) / sizeof(int);
+    for (int i = 0; i < getArrayLength; i++)//up unitl the length
+    {
+        for (int j = 0; j < getArrayLength - 1; j++) {//up until last but one //-i for decreasing number of passes
+            if (a[j] > a[j + 1]) {
+                int temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
+            }
+        }
+    }
+    //printing
+    for (int i = 0; i < getArrayLength; i++) {
+        cout << a[i];
+    }
 
-// Driver Code
-int main()
-{
-	queue<int> gquiz;
-	gquiz.push(10);
-	gquiz.push(20);
-	gquiz.push(30);
-
-	cout << "The queue gquiz is : ";
-	showq(gquiz);
-
-	cout << "\ngquiz.size() : " << gquiz.size();
-	cout << "\ngquiz.front() : " << gquiz.front();
-	cout << "\ngquiz.back() : " << gquiz.back();
-
-	cout << "\ngquiz.pop() : ";
-	gquiz.pop();
-	showq(gquiz);
-
-	return 0;
 }
