@@ -1,22 +1,20 @@
-#include <iostream>
+#include <iostream> 
+#include <stack>
 using namespace std;
 int main() {
+	stack<int> stack;
+	stack.push(21);// The values pushed in the stack should be of the same data which is written during declaration of stack
+	stack.push(22);
+	stack.push(24);
+	stack.push(25);
+	int num = 0;
+	stack.push(num);
+	stack.pop();
+	stack.pop();
+	stack.pop();
 
-    int a[] = { 8,7,6,5,2,4,1,3,9 };
-    int getArrayLength = sizeof(a) / sizeof(int);
-    for (int i = 0; i < getArrayLength; i++)//up unitl the length
-    {
-        for (int j = 0; j < getArrayLength - 1; j++) {//up until last but one //-i for decreasing number of passes
-            if (a[j] > a[j + 1]) {
-                int temp = a[j];
-                a[j] = a[j + 1];
-                a[j + 1] = temp;
-            }
-        }
-    }
-    //printing
-    for (int i = 0; i < getArrayLength; i++) {
-        cout << a[i];
-    }
-
+	while (!stack.empty()) {
+		cout << stack.top() << " ";
+		stack.pop();
+	}
 }
